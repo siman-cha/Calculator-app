@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: League Spartan;
-    font-weight: 700;
-}
 
 :root{
     /* backgrounds */
@@ -54,14 +47,27 @@
     --white-theme3: hsl(0, 0%, 100%);
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: League Spartan;
+    font-weight: 700;
+}
+
 body {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background-color: var(--bgTheme1);
-    display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+}
+
+#container {
+    /* border: 2px solid #333; */
+    border-radius: 5px;
+    padding: 2em 1.45em;
+    overflow-x: hidden;
 }
 
 body.active1 {
@@ -74,11 +80,16 @@ body.active2 {
 
 .toggle, .right{
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
 }
 
 .title {
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .title h4 {
@@ -94,11 +105,12 @@ body.active2 .title h4 {
     color: var(--light-yellow-theme3);
 }
 
-.toggle p {
-    /* margin: 0 6px; */
+.toggle .theme {
     color: var(--white-theme1);
     font-weight: 600;
     transform: scale(0.7, 0.7);
+    margin-right: 18px;
+    letter-spacing: 1.45px;
 }
 
 body.active1 .toggle p {
@@ -109,43 +121,24 @@ body.active2 .toggle p {
     color: var(--light-yellow-theme3);
 }
 
-.right {
-        position: relative;
-        top: -70px;
-        right: -68px;
-}
-
 .right p {
+    color: var(--white-theme1);
     cursor: pointer;
-    font-size: 1.45em;
 }
 
 #one, #two, #three {
     z-index: 1;
-    width: 25px;
-    height: 74px;
+    width: 20px;
+    height: 52px;
     padding-left: 6px;
-}
-
-.control {
-    position: relative;
-    top: -27px;
-    right: 66px;
-}
-
-.control p {
-    letter-spacing: 1.45px;
-    font-size: 1.15em;
-    position: absolute;
-    top: -5px;
-    right: 26px;
+    font-size: 0.85em;
+    margin-right: 6px;
 }
 
 .box {
     background-color: var(--toggle-keypad-bgTheme1);
     position: relative;
-    top: -8px;
-    right: -60px;
+    top: -26px;
     width: 76px;
     height: 27px;
     border-radius: 20px;
@@ -181,22 +174,18 @@ body.active2 #circle {
     box-shadow: var(--soft-cyan-keyshadow-theme3);
 }
 
-.screen{
-	width: 450px;
-    margin-top: -38px;
-}
-
 #screen {
     width: 100%;
     height: 100px;
-    padding: 28px;
+    padding: 16px;
     text-align: right;
-    font-size: 46px;
+    font-size: 32px;
     background-color: var(--screen-bgTheme1);
     color: var(--white-theme1);
     border: 0;
     outline: none;
     border-radius: 7px;
+    margin-bottom: 3vh;
 }
 
 body.active1 #screen{
@@ -210,17 +199,14 @@ body.active2 #screen {
 }
 
 button {
-        /* width: 81px; */
-        height: 58px;
-        padding: 15px;
-        margin: 2px 0px;
+        height: 57px;
+        font-size: 32px;
         outline: none;
         border: 0;
         cursor: pointer;
         border-radius: 7px;
         background-color: var(--keybg-theme1);
         box-shadow: 0px 4px 0.6px 0px var(--keyshadow-theme1);
-        font-size: 32px;
         color: var(--vary-dark-grayish-blue-theme1);
 }
 
@@ -249,10 +235,8 @@ body.active2 button:hover {
 
 .btn {
     display: grid;
-    grid-template-columns: repeat(4, 90px);
-    gap: 15px;
-    width: 450px;
-    height: 420px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
     background-color: var(--toggle-keypad-bgTheme1);
     padding: 24px 22px;
     border-radius: 7px;
@@ -264,10 +248,6 @@ body.active1 .btn {
 
 body.active2 .btn {
     background-color: var(--toggle-keypad-screen-bgTheme3);
-}
-
-.calc-body {
-    margin-top: 25px;
 }
 
 .reset{
@@ -358,175 +338,4 @@ body.active2 .del {
 
 body.active2 .del:hover {
     background-color: hsl(281, 74%, 44%);
-}
-
-@media (max-width: 520px) {
-    #container {
-        width: 88vw;
-        height: 92vh;
-        overflow-x: hidden;
-    }
-    .title h4 {
-        font-size: 2.45em;
-    }
-    .right {
-        font-size: 1.15em;
-        position: relative;
-        top: -79px;
-        right: -73px;
-    }
-    .right p {
-        width: 32px;
-        height: 71px;
-    }
-    .control p {
-        letter-spacing: 1.35px;
-        font-size: 1.25em;
-        position: absolute;
-        top: -12px;
-        right: 24px;
-    }
-    .box {
-        position: relative;
-        top: -17px;
-        right: -64px;
-        width: 81px;
-        height: 33px;
-    }
-    #circle {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 6px;
-        left: 0px;
-        margin-left: 4px;
-    }
-    .screen {
-        width: 361px;
-    }
-    #screen {
-        width: 100%;
-    }
-    .calc-body {
-        margin-top: 16px;
-    }
-    .btn {
-        width: 362px;
-        height: 556px;
-        gap: 0px;
-        padding: 24px 11px;
-    }
-    button {
-        font-weight: 900;
-        /* width: 67px; */
-        height: 66px;
-        margin: 11px 0px;
-        margin-right: 20px;
-    }
-    .reset, .equal {
-        height: 86px;
-        font-size: 26px;
-    }
-}
-
-@media (max-width: 428px) and (min-width: 416px) {
-    .btn {
-        padding: 24px 17px;
-        width: 373px;
-    }
-    #screen {
-        width: 104%;
-    }
-}
-
-@media (max-width: 426px) and (min-width: 414px) {
-    .btn {
-        padding: 24px 19px;
-        height: 426px;
-        padding: 6px 11px;
-    }
-    .reset, .equal {
-        height: 57px;
-    }
-    button {
-        height: 59px;
-    }
-    .calc-body {
-        margin-top: 16px;
-    }
-}
-
-@media (max-width: 392px) and (min-width: 386px) {
-    #container {
-        width: 94vw;
-    }
-    #screen {
-        width: 366px;
-    }
-    .btn {
-        padding: 24px 13.2px;
-        width: 367px;
-    }
-}
-
-@media (max-width: 384px) and (min-width: 376px) {
-    #container {
-        width: 93vw;
-    }
-    #screen {
-        width: 357px;
-    }
-    .btn {
-        width: 357px;
-        padding: 24px 8px;
-    }
-}
-
-@media (max-width: 376px) and (min-width: 359px) {
-    #container {
-        width: 94vw;
-        height: 94vh;
-    }
-    .title h4 {
-        font-size: 2.45em;
-    }
-    .right {
-        font-size: 0.75em;
-        top: -74px;
-        right: -75px;
-    }
-    .control p {
-        font-size: 1.15em;
-    }
-    .screen {
-        margin-top: -48px;
-    }
-    #screen {
-        width: 98%;
-        height: 89px;
-    }
-    .btn {
-        width: 353px;
-        height: 418px;
-        padding: 11px 6px;
-    }
-    button {
-        height: 57px;
-    }
-    .reset, .equal {
-        height: 58px;
-    }
-}
-
-@media (max-width: 360px) and (min-width: 349px) {
-    #screen {
-        width: 93.5%;
-    }
-    .btn {
-        width: 338px;
-        padding: 11px 0px;
-    }
-    button {
-        margin-right: 22px;
-    }
 }

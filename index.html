@@ -17,13 +17,13 @@
     <div class="title">
       <h4>calc</h4>
       <div class="toggle">
-        <div class="right">
-          <p id="one">1</p>
-          <p id="two">2</p>
-          <p id="three">3</p>
-        </div>
+        <p class="theme">THEME</p>
         <div class="control">
-          <p>THEME</p>
+          <div class="right">
+            <p id="one">1</p>
+            <p id="two">2</p>
+            <p id="three">3</p>
+          </div>
           <div class="box">
             <div id="circle"></div>
           </div>
@@ -31,13 +31,10 @@
       </div>
     </div>
 
-    <div class="screen">
-      <form name="calc">
-        <input type="text" name="text" readonly id="screen">
-      </form>
-    </div>
+    <form name="calc">
+      <input type="text" name="text" readonly id="screen">
+    </form>
 
-    <div class="calc-body">
       <div class="btn">
         <button class="num" onclick="document.calc.text.value+='7'">7</button>
         <button class="num" onclick="document.calc.text.value+='8'">8</button>
